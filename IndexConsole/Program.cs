@@ -19,12 +19,11 @@ namespace IndexConsole
         {
 
          
+            
+            Startup.Init<Media>("http://localhost:8989/solr/mercCloud_shard1_replica1");
+            
             ISolrOperations<Media> solr = ServiceLocator.Current.GetInstance<ISolrOperations<Media>>();
 
-
-            Startup.Init<Media>("http://localhost:8989/solr/mercCloud_shard1_replica1");
-
-         
 
 
             List<Media> allMedia = JsonConvert.DeserializeObject<List<Media>>(File.ReadAllText(@"..\..\media.json"));
